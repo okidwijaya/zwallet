@@ -1,11 +1,13 @@
 import Image from "next/image";
 import clientpic from "src/assets/image/clientst.png";
+import Layout from "src/common/components/Layout";
 import styles from "src/common/styles/Dashboard.module.css";
 
 export default function Success() {
   return (
     <>
-      <div>
+      <Layout>
+        <div className="container-fluid mx-auto my-5">
         <div>
           <i className="bi bi-check-circle-fill"></i> transfer success
         </div>
@@ -33,7 +35,9 @@ export default function Success() {
         </div>
         <button className="btn btn-primary d-flex">back to home</button>
         <button className="btn btn-secondary d-flex">download pdf</button>
-      </div>
+    
+        </div>
+          </Layout>
     </>
   );
 }

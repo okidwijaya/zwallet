@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
-import Image from "next/image";
+import React, { useState } from "react";
+// import Image from "next/image";
 import Link from "next/link";
 import styles from "src/common/styles/Account.module.css";
-import registerImg from "src/assets/image/register.png";
-import bg from "src/assets/image/registerbg.png";
+import Account from "src/common/components/account";
+// import registerImg from "src/assets/image/register.png";
+// import bg from "src/assets/image/registerbg.png";
 
 export default function Login() {
   const [passwordShown, setPasswordShown] = useState(false);
@@ -19,43 +20,7 @@ export default function Login() {
 
   return (
     <>
-      <div className="row mx-auto align-item-center justify-content-center">
-        <div className="col-8 col-sm-6 col-md-6 col-lg-4 mx-auto">
-        <Image
-          src={bg}
-          className={styles.imageBackground}
-          alt="bg img"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="left"
-        />
-          <p className={styles.title}>Zwallet</p>
-          {/* <div className="container"> */}
-          <Image
-            src={registerImg}
-            className={styles.imageStarter}
-            alt="register"
-            width={400}
-            height={450}
-            // layout="fill"
-            // objectFit="scale-down"
-            // objectPosition="static"
-          />
-          {/* </div> */}
-          <p className={styles["left-title"]}>
-            App that Covering Banking Needs.
-          </p>
-          <p className={styles["left-description"]}>
-            Zwallet is an application that focussing in banking needs for all
-            users in the world. Always updated and always following world
-            trends. 5000+ users registered in Zwallet everyday with worldwide
-            users coverage.
-          </p>
-        </div>
-
-        <div
-          className={`${styles.formContainer} col-12 col-sm-5 col-md-6 col-lg-6`}
-        >
+      <Account>
           <div className="container-fluid">
             <p className={styles["right-title"]}>
               Start Accessing Banking Needs With All Devices and All Platforms
@@ -67,7 +32,7 @@ export default function Login() {
               that for you!
             </p>
             <form className={styles.login}>
-              <div className={`${styles['form-input-warpper']} form-group`}>
+              <div className={`${styles["form-input-warpper"]} form-group`}>
                 <label>Email address</label>
                 <div
                   className={`${styles["style-input"]} d-flex justify-content-center`}
@@ -83,7 +48,7 @@ export default function Login() {
                   />
                 </div>
               </div>
-              <div className={`${styles['form-input-warpper']} form-group`}>
+              <div className={`${styles["form-input-warpper"]} form-group`}>
                 <label>Password</label>
                 <div
                   className={`${styles["style-input"]} d-flex justify-content-center`}
@@ -102,9 +67,9 @@ export default function Login() {
                   ></i>{" "}
                 </div>
               </div>
-                <Link href="/account/reset" passHref>
-                  <a className={`${styles.reset} btn`}>forgot password</a>
-                </Link>
+              <Link href="/account/reset" passHref>
+                <a className={`${styles.reset} btn`}>forgot password</a>
+              </Link>
               <button
                 type="submit"
                 className="btn btn-block btn-secondary w-100"
@@ -119,8 +84,7 @@ export default function Login() {
               </Link>
             </p>
           </div>
-        </div>
-      </div>
+      </Account>
     </>
   );
 }

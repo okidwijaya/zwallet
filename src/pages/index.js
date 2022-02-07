@@ -1,13 +1,13 @@
 import Head from "next/head";
 import styles from "src/common/styles/Home.module.css";
 import Banner from "src/common/components/home/banner";
-// import Header from "src/common/components/Header";
-// import Footer from "src/common/components/Footer";
+import Header from "src/common/components/Header";
+import Footer from "src/common/components/Footer";
 
 export default function Home() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <div className={styles.container}>
         <Head>
           <title>Wallet App</title>
@@ -18,7 +18,7 @@ export default function Home() {
         <main className={styles.main}>
           <Banner />
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   );
