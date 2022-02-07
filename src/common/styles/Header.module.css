@@ -1,0 +1,13 @@
+.login {
+    margin: 0.5rem;
+    width: max(100px, 70px);
+}
+
+.signup {
+    width: max(100px, 70px);
+    margin: 0.5rem;
+}
+
+.navbar-header {
+    margin: 1rem 4rem;
+}

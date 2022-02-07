@@ -1,0 +1,49 @@
+.logout i::before {
+    transform: rotate(90deg);
+}
+
+.logout {
+    margin-top: 13vh;
+    border: none;
+    background-color: white;
+}
+
+.menu {
+    width: max(70%, 250px);
+    height: 70vh;
+    margin: 20px auto 30px auto;
+    background: #ffffff;
+    box-shadow: 20px 31px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 25px;
+    z-index: 8;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgb(39, 39, 39);
+}
+
+.menu i,
+.menu span {
+    margin: 15px;
+    text-decoration: none;
+}
+
+.menu div {
+    margin: 50px auto;
+}
+
+.menu div:focus,
+.menu div:hover,
+.menu button:hover {
+    border-left: 2px solid rgba(99, 121, 244, 1);
+    color: rgba(99, 121, 244, 1);
+}
+
+.menu a:hover,
+.menu a:focus {
+    color: rgba(99, 121, 244, 1);
+    font-weight: bold;
+}

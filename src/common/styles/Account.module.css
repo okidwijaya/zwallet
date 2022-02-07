@@ -1,0 +1,167 @@
+.formContainer {
+    position: absoulute;
+    z-index: 3;
+    height: 100vh;
+    padding-top: 10vh;
+    padding-right: 7vw;
+    padding-left: 7vw;
+    background-color: white !important;
+}
+
+.form {
+    height: 70vh;
+    margin-bottom: 3rem;
+}
+
+.imageBackground {
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+.imageStarter {
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    position: relative;
+    font-size: 5vh;
+    font-weight: bolder;
+    z-index: 3;
+    text-align: left;
+    margin: 30px auto auto;
+    color: white;
+}
+
+.left-title {
+    position: relative;
+    font-size: 3vh;
+    font-weight: 500;
+    z-index: 3;
+    text-align: left;
+    margin: 10px auto auto;
+    color: white;
+}
+
+.left-description {
+    position: relative;
+    font-size: 1.5vh;
+    font-weight: normal;
+    z-index: 3;
+    text-align: left;
+    margin: 20px auto auto;
+    color: white;
+}
+
+.right-title {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2vw;
+    color: #3A3D42;
+}
+
+.right-description {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1vw;
+    color: rgba(58, 61, 66, 0.6);
+}
+
+.right-description span {
+    margin: 2rem auto;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1vw;
+    color: #6379F4;
+    cursor: pointer;
+}
+
+.login {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2vh;
+    color: rgba(169, 169, 169, 0.8);
+}
+
+.login:active,
+.login:hover,
+.login:focus {
+    color: #6379F4;
+}
+
+.login:active button,
+.login:hover button,
+.login:focus button {
+    background-color: #6379F4;
+    color: #fff;
+}
+
+.style-input:active,
+.style-input:focus,
+.style-input:hover {
+    border-bottom: 1px solid #6379F4;
+}
+
+.form-input-warpper {
+    margin-top: 1.7rem;
+    /* margin-bottom: 1rem; */
+}
+
+.style-input {
+    border-bottom: 1px solid rgba(169, 169, 169, 0.8);
+}
+
+.login input {
+    border: none;
+    background-color: white;
+    border-radius: 0;
+    margin: 0 auto;
+    align-items: center;
+    padding: 0 10px 5px 10px;
+    /* focus: none; */
+    box-shadow: none !important;
+}
+
+.login i {
+    font-size: 3vh;
+}
+
+.login input::placeholder {
+    background-color: white;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2vh;
+    color: rgba(169, 169, 169, 0.459);
+}
+
+.login button {
+    margin: 2rem auto 1rem;
+    height: max(55px, 3rem);
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.2vw;
+    text-align: center;
+    color: #88888F;
+    background-color: #DADADA;
+    box-shadow: 0px 6px 75px rgba(100, 87, 87, 0.05);
+    border-radius: 12px;
+    border: none;
+}
+
+.reset {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 600;
+    text-align: right;
+    float: right;
+    margin: 0.5rem auto 2rem;
+    font-size: 2vh;
+    color: rgba(58, 61, 66, 0.8);
+}

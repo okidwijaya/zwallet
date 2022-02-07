@@ -1,0 +1,126 @@
+.userName {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2vh;
+    color: #4D4B57;
+    margin: 1px;
+}
+
+.phoneNumber {
+    font-weight: normal;
+    font-size: 1.8vh;
+    color: #7A7886;
+    margin: 1px;
+}
+
+.title {
+    font-weight: normal;
+    font-size: 1.8vh;
+    color: #7A7886;
+}
+
+.description {
+    font-weight: bold;
+    font-size: 2vh;
+    color: #514F5B;
+}
+
+
+/* add phone */
+
+.phoneTitle {
+    width: 23vw;
+}
+
+.phoneTitle p {
+    margin: 30px;
+}
+
+.addPhoneWrapper {
+    width: 70%;
+    margin: 50px auto;
+}
+
+.phone {
+    width: 50%;
+    margin: 100px auto;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2vh;
+    color: rgba(169, 169, 169, 0.8);
+}
+
+.phone:active,
+.phone:hover,
+.phone:focus {
+    color: #6379F4;
+}
+
+.phone:active button,
+.phone:hover button,
+.phone:focus button {
+    background-color: #6379F4;
+    color: #fff;
+}
+
+.phone p {
+    color: rgb(0, 0, 0);
+    margin: auto 5px;
+    font-size: 2vh;
+}
+
+.style-input:active,
+.style-input:focus,
+.style-input:hover {
+    border-bottom: 1px solid #6379F4;
+}
+
+.form-input-warpper {
+    margin-top: 1.7rem;
+    /* margin-bottom: 1rem; */
+}
+
+.style-input {
+    border-bottom: 1px solid rgba(169, 169, 169, 0.8);
+}
+
+.phone input {
+    border: none;
+    background-color: white;
+    border-radius: 0;
+    margin: 0 auto;
+    align-items: center;
+    padding: 0 10px 5px 10px;
+    /* focus: none; */
+    box-shadow: none !important;
+}
+
+.phone i {
+    font-size: 2.5vh;
+}
+
+.phone input::placeholder {
+    background-color: white;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2vh;
+    color: rgba(169, 169, 169, 0.459);
+}
+
+.phone button {
+    margin: 2rem auto 1rem;
+    height: max(55px, 3rem);
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.2vw;
+    text-align: center;
+    color: #88888F;
+    background-color: #DADADA;
+    box-shadow: 0px 6px 75px rgba(100, 87, 87, 0.05);
+    border-radius: 12px;
+    border: none;
+}
