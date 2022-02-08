@@ -4,10 +4,19 @@ import { useRouter } from "next/router";
 
 export default function Aside() {
     const router = useRouter();
+    const style = {
+      marginRight: 10,
+      // color: router.asPath === href ? 'red' : 'black',
+    }
+  
+    const handleClick = (e) => {
+      e.preventDefault()
+      router.push(href)
+    }
   return (
     <aside className={styles.menu}>
       <div>
-        <Link href="/dashboard" passHref>
+        <Link href="/dashboard" onClick={handleClick} style={style} passHref>
           <a pathname={router.pathname}>
             {" "}
             <i className="bi bi-grid"></i>
@@ -17,7 +26,7 @@ export default function Aside() {
       </div>
 
       <div>
-        <Link href="/reciver" passHref>
+        <Link href="/reciver" onClick={handleClick} style={style} passHref>
           <a pathname={router.pathname}>
             {" "}
             <i className="bi bi-arrow-up"></i>
@@ -27,7 +36,7 @@ export default function Aside() {
       </div>
 
       <div>
-        <Link href="/topup" passHref>
+        <Link href="/topup" onClick={handleClick} style={style} passHref>
           <a pathname={router.pathname}>
             <i className="bi bi-plus-lg"></i>
             Top up
@@ -35,7 +44,7 @@ export default function Aside() {
         </Link>
         </div>
         <div>
-          <Link href="/profile" passHref>
+          <Link href="/profile" onClick={handleClick} style={style} passHref>
             <a pathname={router.pathname}>
               <i className="bi bi-person"></i>
               Profil
