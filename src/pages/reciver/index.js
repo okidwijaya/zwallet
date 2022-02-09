@@ -1,9 +1,26 @@
-import Image from "next/image";
-import clientpic from "src/assets/image/clientst.png";
 import Layout from "src/common/components/Layout";
+import UserCard from "src/common/components/UserCard";
 import styles from "src/common/styles/Dashboard.module.css";
+import { useEffect, useState } from "react";
+import {connect} from 'react-redux';
+import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
+import { getUserList } from "src/modules/getUser";
 
-export default function Reciver() {
+function Reciver(props) {
+  const router = useRouter();
+  const state = useSelector((state) => state);
+  console.log(state);
+  const [userList, setUserList] = useState([]);
+  useEffect(() => {
+    const query = `?page=1&limit=4&sort=firstName DESC`;
+    getUserList(query)
+      .then((res) => setUserList(res.data.data))
+      .catch((err) => console.log(err));
+  }, []);
+  const onClickHandler = (id) => {
+    router.push(`/pokemon/${id[0]}`);
+  };
   return (
     <>
       <Layout>
@@ -25,18 +42,30 @@ export default function Reciver() {
                 </div>
               </div>
             </form>
-            <div className="col-8 col-md-8 d-flex">
-              <div className="mx-2 ">
-                <Image src={clientpic} alt="google" width={50} height={50} />
-              </div>
-              <div className="w-50 text-left my-auto">
-                <p className={styles.userName}>Netflix</p>
-                <p className={styles["transaction-description"]}>Transfer</p>
-              </div>
-            </div>
+            <section className="container-fluid w-50">
+              {Array.isArray(userList) &&
+                userList.length > 0 &&
+                userList.map((userLists, idx) => (
+                  <UserCard
+                    name={userLists.firstName}
+                    phone={userLists.noTelp}
+                    key={idx}
+                  />
+                ))}
+              <UserCard />
+              <UserCard />
+            </section>
           </div>
         </div>
       </Layout>
     </>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    // token: state.userData.token,
+  };
+};
+
+export default connect(mapStateToProps)(Reciver);

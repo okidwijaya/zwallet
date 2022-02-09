@@ -1,13 +1,13 @@
 import Head from "next/head";
 import styles from "src/common/styles/Home.module.css";
 import Banner from "src/common/components/home/banner";
-import Header from "src/common/components/Header";
+import Nav from "src/common/components/Nav";
 import Footer from "src/common/components/Footer";
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <Nav />
       <div className={styles.container}>
         <Head>
           <title>Wallet App</title>
