@@ -8,13 +8,13 @@ export default function Profile() {
     <>
       <Layout>
         <div className="d-flex justify-content-center align-items-center">
-          <div className="col-6 col-md-6 mx-auto">
+          <div className="col-6 col-md-6 mx-auto text-center">
             <div className="mx-2">
               <Image src={clientpic} alt="google" width={50} height={50} />
             <div>
               <i className="bi bi-pencil"></i> edit
             </div>
-            <div className="w-50 my-auto">
+            <div className="w-50 my-auto mx-auto">
               <p className={styles.userName}>Netflix</p>
               <p className={styles.phoneNumber}>+9883 939 32939</p>
             </div>
