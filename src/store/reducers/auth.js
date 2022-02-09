@@ -10,7 +10,7 @@ const initialState = {
   isPending: false,
   isFulfilled: false,
   isRejected: false,
-  err: {},
+  err: null,
 };
 const authReducer = (prevState = initialState, action) =>{
 // return {...prevState}
@@ -51,7 +51,7 @@ switch (action.type) {
       ...prevState,
       isPending: false,
       isRejected: true,
-      err,
+      err : null,
     };
 
     // case authPin:
