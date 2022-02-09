@@ -1,9 +1,5 @@
-import Image from "next/image";
-// import Link from "next/link";
 import dynamic from "next/dynamic";
 import styles from "src/common/styles/Account.module.css";
-import registerImg from "src/assets/image/register.png";
-import bg from "src/assets/image/registerbg.png";
 // import { useState } from "react";
 
 export default function Inputpin() {

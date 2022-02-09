@@ -7,8 +7,8 @@ export default function Ballance() {
         <div className="row w-100">
           <div className="col-11 col-sm-6 mx-auto">
             <p>Ballance</p>
-            <h1>Rp.120.000</h1>
-            <p>+62 813-9387-7946</p>
+            <h1>Rp.150.000</h1>
+            <p>+62 232-1234-1212</p>
           </div>
           <div className="col-11 col-sm-4 my-auto float-right">
             <button className="btn btn-block">
