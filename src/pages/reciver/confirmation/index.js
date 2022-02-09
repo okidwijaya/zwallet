@@ -2,6 +2,7 @@ import Image from "next/image";
 import clientpic from "src/assets/image/clientst.png";
 import Layout from "src/common/components/Layout";
 import styles from "src/common/styles/Dashboard.module.css";
+import Link from "next/link";
 
 export default function Confirmation() {
   return (
@@ -31,9 +32,11 @@ export default function Confirmation() {
               <p className={styles.successDescription}>For buying some socks</p>
             </div>
           </div>
+          <Link href="/reciver/success" passHref>
           <button className="btn btn-primary d-flex align-items-end justify-content-end">
             continue
           </button>
+          </Link>
         </div>
       </Layout>
     </>

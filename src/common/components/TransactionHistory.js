@@ -1,6 +1,7 @@
 import Image from "next/image";
 import clientpic from "src/assets/image/clientst.png";
 import styles from "src/common/styles/Dashboard.module.css";
+import Link from "next/link";
 
 export default function TransactionHistory() {
   return (
@@ -58,9 +59,11 @@ export default function TransactionHistory() {
 
         <div className="row">
           <div className="col-8 col-md-8 d-flex">
+            <Link href="/reciver/confirmation" passHref>
             <div className="w-20 mx-2 ">
               <Image src={clientpic} alt="google" width={50} height={50} />
             </div>
+            </Link>
             <div className="w-50 text-left my-auto">
               <p className={styles.userName}>Netflix</p>
               <p className={styles["transaction-description"]}>Transfer</p>

@@ -1,29 +1,36 @@
 import Layout from "src/common/components/Layout";
-import dynamic from "next/dynamic";
 import styles from "src/common/styles/Account.module.css";
+import Link from "next/Link";
 
 export default function Topup() {
-  const ReactCodeInput = dynamic(import("react-code-input"));
-
   return (
     <>
       <Layout>
-      <form className={styles.login}>
-              <div
-                className={`${styles["form-input-warpper"]} form-group my-5`}
+        <p><strong>TopUp</strong></p>
+        <p>Enter the amount of money, and click submit</p>
+        <form className={styles.login}>
+          <div className={`${styles["form-input-warpper"]} form-group w-25 mx-auto mt-5 p-5`}>
+            <div
+              className={`${styles["style-input"]} d-flex justify-content-center`}
+            >
+              <input
+                type="number"
+                name="money"
+                className="form-control"
+                placeholder=""
+                required
+              />
+            </div>
+          <Link href="/dashboard" passHref>
+          <button
+              type="submit"
+              className="btn btn-block btn-secondary w-100"
               >
-                <ReactCodeInput type="password" fields={6} />
-                {/* value={pinCode}
-                onChange={handlePinChange}
-                <p>{pinCode}</p> */}
+              Submit
+            </button>
+          </Link>
               </div>
-              <button
-                type="submit"
-                className="btn btn-block btn-secondary w-100 mt-5"
-              >
-                Confirm
-              </button>
-            </form>
+        </form>
       </Layout>
     </>
   );
