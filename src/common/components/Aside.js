@@ -30,7 +30,7 @@ export default function Aside() {
       </div>
 
       <div className={styles.linkWrapper}>
-        <Link href="/reciver" onClick={handleClick} style={style} passHref>
+        <Link href="/receiver" onClick={handleClick} style={style} passHref>
           <a pathname={router.pathname}>
             {" "}
             <i className="bi bi-arrow-up"></i>

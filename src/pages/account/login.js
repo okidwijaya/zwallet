@@ -28,7 +28,6 @@ function Login(props) {
       // localStorage["user"] = JSON.stringify(props.auth.userData.token)
     
         router.push("/dashboard");
-    
     }
   });
   const notify = () => {

@@ -32,7 +32,7 @@ export default function Confirmation() {
               <p className={styles.successDescription}>For buying some socks</p>
             </div>
           </div>
-          <Link href="/reciver/success" passHref>
+          <Link href="/receiver/success" passHref>
           <button className="btn btn-primary d-flex align-items-end justify-content-end">
             continue
           </button>

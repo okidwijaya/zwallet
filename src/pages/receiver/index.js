@@ -1,34 +1,35 @@
 import Layout from "src/common/components/Layout";
-import UserCard from "src/common/components/UserCard";
+import UserCard from "src/common/components/card/ReceiverCard";
 import styles from "src/common/styles/Dashboard.module.css";
 import { useEffect, useState } from "react";
-import {connect} from 'react-redux';
-import { useRouter } from "next/router";
+import { connect } from "react-redux";
+// import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
-import { getUserList } from "src/modules/getUser";
+import { getUserList } from "src/modules/getData/getUserList";
 
-function Reciver(props) {
-  const router = useRouter();
+function Receiver(props) {
+  // const router = useRouter();
   const state = useSelector((state) => state);
   console.log(state);
   const [userList, setUserList] = useState([]);
   useEffect(() => {
-    const query = `?page=1&limit=4&sort=firstName DESC`;
-    getUserList(query)
-      .then((res) => setUserList(res.data.data))
+    const query = "?page=1&limit=4&search=&sort=firstName DESC";
+    const token = props.token;
+    getUserList(query, token)
+      .then((res) => {
+        setUserList(res.data.data);
+        console.log(res.data.data);
+      })
       .catch((err) => console.log(err));
   }, []);
-  const onClickHandler = (id) => {
-    router.push(`/pokemon/${id[0]}`);
-  };
   return (
     <>
       <Layout>
-        <div>
-          <p>Search Reciver</p>
-          <div>
-            <form className={styles.search}>
-              <div className={`${styles["form-input-warpper"]} form-group`}>
+        <div className={styles.ReceiverWrapper}>
+          <p><strong>Search Receiver</strong></p>
+          <div className={styles.search}>
+            <form>
+              <div className="form-group">
                 <div
                   className={`${styles["style-input"]} d-flex justify-content-center`}
                 >
@@ -37,25 +38,24 @@ function Reciver(props) {
                     type="text"
                     className="form-control"
                     id="formGroupExampleInput2"
-                    placeholder="Serach reciver here"
+                    placeholder="Serach receiver here"
                   />
                 </div>
               </div>
             </form>
-            <section className="container-fluid w-50">
+              </div>
+            <section className="w-100">
               {Array.isArray(userList) &&
                 userList.length > 0 &&
-                userList.map((userLists, idx) => (
+                userList.map((userLists, id) => (
                   <UserCard
                     name={userLists.firstName}
+                    lastname={userLists.lastName}
                     phone={userLists.noTelp}
-                    key={idx}
+                    key={id}
                   />
                 ))}
-              <UserCard />
-              <UserCard />
             </section>
-          </div>
         </div>
       </Layout>
     </>
@@ -64,8 +64,9 @@ function Reciver(props) {
 
 const mapStateToProps = (state) => {
   return {
-    // token: state.userData.token,
+    token: state.auth.userData.token,
+    id: state.auth.userData.id,
   };
 };
 
-export default connect(mapStateToProps)(Reciver);
+export default connect(mapStateToProps)(Receiver);
