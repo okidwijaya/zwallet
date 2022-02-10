@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function TransactionHistory() {
   return (
-    <>
+    <div>
         <div className="row">
           <div className="col-8 col-md-8 d-flex">
             <div className="w-20 mx-2 ">
@@ -17,43 +17,9 @@ export default function TransactionHistory() {
             </div>
           </div>
 
-          <div className="col-3 col-md-3 my-auto text-center">
+          <div className="col-4 col-md-4 my-auto text-center">
             <p className={styles.income}>+Rp50.000</p>
             {/* green color profit */}
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-8 col-md-8 d-flex">
-            <div className="w-20 mx-2 ">
-              <Image src={clientpic} alt="google" width={50} height={50} />
-            </div>
-            <div className="w-50 text-left my-auto">
-              <p className={styles.userName}>Netflix</p>
-              <p className={styles["transaction-description"]}>Transfer</p>
-            </div>
-          </div>
-
-          <div className="col-3 col-md-3 my-auto text-center">
-            <p className={styles.spending}>-Rp149.000</p>
-            {/* gred color loss */}
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-8 col-md-8 d-flex">
-            <div className="w-20 mx-2 ">
-              <Image src={clientpic} alt="google" width={50} height={50} />
-            </div>
-            <div className="w-50 text-left my-auto">
-              <p className={styles.userName}>Netflix</p>
-              <p className={styles["transaction-description"]}>Transfer</p>
-            </div>
-          </div>
-
-          <div className="col-3 col-md-3 my-auto text-center">
-            <p className={styles.spending}>-Rp149.000</p>
-            {/* gred color loss */}
           </div>
         </div>
 
@@ -70,12 +36,12 @@ export default function TransactionHistory() {
             </div>
           </div>
 
-          <div className="col-3 col-md-3 my-auto text-center">
+          <div className="col-4 col-md-4 my-auto text-center">
             <p className={styles.spending}>-Rp149.000</p>
             {/* gred color loss */}
           </div>
         </div>
   
-    </>
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Layout from "src/common/components/Layout";
-import TransactionHistory from "src/common/components/TransactionHistory";
+import TransactionHistory from "src/common/components/HistoryCard";
 import styles from "src/common/styles/Dashboard.module.css";
 
 export default function Transaction() {

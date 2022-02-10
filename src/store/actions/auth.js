@@ -1,5 +1,5 @@
 import { ACTION_STRING } from "src/store/actions/actionString";
-import { loginAuth } from "src/utils/https/auth";
+import { loginAuth } from "src/modules/utils/auth";
 
 export const loginAction = (body) => {
   return {

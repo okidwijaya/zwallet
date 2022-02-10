@@ -1,6 +1,6 @@
 import Aside from "src/common/components/Aside";
 import Ballance from "src/common/components/Ballance";
-import TransactionHistory from "src/common/components/TransactionHistory";
+import TransactionHistory from "src/common/components/HistoryCard";
 import UserChart from "src/common/components/UserChart";
 import styles from "src/common/styles/Dashboard.module.css";
 import Link from "next/link";
@@ -29,6 +29,7 @@ export default function Dashboard() {
                     </a>
                   </Link>
                 </div>
+                <TransactionHistory />
                 <TransactionHistory />
               </div>
             </div>

@@ -1,7 +1,8 @@
 import React from "react";
 import Aside from "./Aside";
-import Header from "src/common/components/Header";
-import FooterUser from "src/common/components/FooterUser";
+import Header from "src/common/components/header/Header";
+import FooterUser from "src/common/components/footer/FooterUser";
+import styles from "src/common/styles/Dashboard.module.css";
 
 export default function Layout({ children }) {
   return (
@@ -13,7 +14,7 @@ export default function Layout({ children }) {
         </div>
         {/* main content */}
         <div className="col-11 col-sm-12 col-md-9 col-lg-9">
-          <div >{children}</div>
+          <div className={styles.userContent}>{children}</div>
         </div>
       </div>
       <FooterUser />

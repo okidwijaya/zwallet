@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import styles from "src/common/styles/Account.module.css";
 import Account from "src/common/components/account";
-import { registerAuth } from "src/utils/https/auth";
+import { registerAuth } from "src/modules/utils/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from 'next/router'

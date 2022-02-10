@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "src/assets/image/ZwalletLogo.svg";
 import styles from "src/common/styles/Header.module.css";
-// import UserCard from "src/common/components/UserCard";
 import clientpic from "src/assets/image/clientst.png";
 
 export default function Header() {

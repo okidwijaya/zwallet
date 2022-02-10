@@ -1,3 +1,9 @@
+.userContent {
+    width: 90%;
+    margin: 20px;
+}
+
+
 /* ballance cmponent */
 
 .ballanceInfo {
@@ -41,6 +47,24 @@
 
 
 /* tranasacatyiton */
+
+.userChart {
+    width: 100%;
+    padding: 1rem;
+    background: #ffffff;
+    box-shadow: 2px 13px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 25px;
+    height: 300px;
+}
+
+.TransactionHistory {
+    width: 100%;
+    padding: 1rem;
+    background: #ffffff;
+    box-shadow: 2px 13px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 25px;
+    height: 300px;
+}
 
 .userName {
     font-family: Nunito Sans;
