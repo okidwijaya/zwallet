@@ -1,3 +1,11 @@
+.landingFooter {
+    width: 100%;
+    /* height: max(400px, 60vh); */
+    height: max(514px, 65vh);
+    background-color: rgba(99, 121, 244, 1);
+    color: white;
+}
+
 .description h1 {
     font-family: Nunito Sans;
     font-size: 3rem;
@@ -18,6 +26,17 @@
     bottom: 0;
     margin-top: 3rem;
     height: 5vh;
+}
+
+.userFooter {
+    bottom: 0;
+    margin: 0;
+    padding: 1rem 5rem;
+    width: 100%;
+    /* height: max(400px, 60vh); */
+    height: max(50px, 9vh);
+    background-color: rgba(99, 121, 244, 1);
+    color: white;
 }
 
 .description p {

@@ -18,11 +18,3 @@ a {
 * {
     box-sizing: border-box;
 }
-
-footer {
-    width: 100%;
-    /* height: max(400px, 60vh); */
-    height: max(514px, 65vh);
-    background-color: rgba(99, 121, 244, 1);
-    color: white;
-}

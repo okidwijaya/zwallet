@@ -22,8 +22,8 @@ export default function Header() {
                 <Image src={clientpic} alt="google" width={50} height={50} />
               </div>
               <div className="w-50 my-auto">
-                <p className={styles.userName}>Netflix</p>
-                <p className={styles["transaction-description"]}>phone</p>
+                <p className={`${styles.userName} my-0`}>Netflix</p>
+                <p className={`${styles["transaction-description"]} my-0`}>phone</p>
               </div>
             </div>
             <button className={`${styles.signup} btn btn-light`}>

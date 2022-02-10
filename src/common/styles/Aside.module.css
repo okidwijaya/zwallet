@@ -20,30 +20,38 @@
     padding-top: 20px;
 }
 
-.menu a {
+.linkWrapper a {
     text-decoration: none;
     color: rgb(39, 39, 39);
 }
 
-.menu i,
-.menu span {
+.linkWrapper i,
+.linkWrapper span,
+.logout i {
     margin: 15px;
     text-decoration: none;
 }
 
-.menu div {
+.linkWrapper {
     margin: 50px auto;
 }
 
-.menu div:focus,
-.menu div:hover,
-.menu button:hover {
+.linkWrapper:focus,
+.linkWrapper:hover,
+.linkWrapper button:hover,
+.logout:hover {
     border-left: 2px solid rgba(99, 121, 244, 1);
     color: rgba(99, 121, 244, 1);
 }
 
-.menu a:hover,
-.menu a:focus {
+.logout:hover,
+.logout:focus,
+.linkWrapper a:hover,
+.linkWrapper a:focus {
     color: rgba(99, 121, 244, 1);
     font-weight: bold;
+}
+
+.menu a {
+    cursor: pointer;
 }

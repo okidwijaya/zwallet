@@ -1,0 +1,110 @@
+.topup {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2vh;
+    color: rgba(0, 0, 0, 0.8);
+    width: 450px;
+    height: 350px;
+    background-color: white;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-right: 1rem;
+    border-radius: 15px;
+}
+
+.topup:active,
+.topup:hover,
+.topup:focus {
+    border-color: 1px solid #6379F4;
+}
+
+.topup:active div,
+.topup:hover div,
+.topup:focus div {
+    border: white;
+}
+
+.topup:active button,
+.topup:hover button,
+.topup:focus button {
+    background-color: #6379F4;
+    color: #fff;
+    border: white;
+}
+
+
+/* .style-input:active,
+.style-input:focus,
+.style-input:hover {
+    border-bottom: 1px solid #6379F4;
+} */
+
+
+/* .form-input-warpper {
+    margin-top: 1.7rem;
+    /* margin-bottom: 1rem; */
+
+
+/* } */
+
+
+/* .style-input {
+    border-bottom: 1px solid rgba(169, 169, 169, 0.8);
+} */
+
+.topup input {
+    /* border: none; */
+    background-color: white;
+    border-radius: 10px;
+    height: 70px;
+    margin: 30px auto;
+    align-items: center;
+    /* focus: none; */
+    box-shadow: none !important;
+}
+
+.topup i {
+    font-size: 3vh;
+}
+
+.topup input::placeholder {
+    background-color: white;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2vh;
+    color: rgba(169, 169, 169, 0.459);
+}
+
+.topup button {
+    float: right;
+    height: max(45px, 3rem);
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.2vw;
+    text-align: center;
+    color: #88888F;
+    margin: 20px auto;
+    background-color: #DADADA;
+    box-shadow: 0px 6px 75px rgba(100, 87, 87, 0.05);
+    border-radius: 12px;
+    border: none;
+    width: 40%;
+}
+
+.topupModal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}

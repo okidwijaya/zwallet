@@ -1,9 +1,9 @@
-import React from "react";
+
 import styles from "src/common/styles/Footer.module.css"
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className={styles.landingFooter}>
      <div className="col-10 mx-auto container-fluid">
      <div className={styles.description}>
         <h1>Zwallet</h1>
