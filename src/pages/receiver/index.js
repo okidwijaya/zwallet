@@ -3,17 +3,17 @@ import UserCard from "src/common/components/card/ReceiverCard";
 import styles from "src/common/styles/Dashboard.module.css";
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
-// import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { getUserList } from "src/modules/getData/getUserList";
 
 function Receiver(props) {
-  // const router = useRouter();
+  const router = useRouter();
   const state = useSelector((state) => state);
-  console.log(state);
-  const [userList, setUserList] = useState([]);
+  console.log("current state" + state);
+  const [userLists, setUserList] = useState([]);
   useEffect(() => {
-    const query = "?page=1&limit=4&search=&sort=firstName DESC";
+    const query = "?page=1&limit=6&search=&sort=firstName DESC";
     const token = props.token;
     getUserList(query, token)
       .then((res) => {
@@ -22,11 +22,17 @@ function Receiver(props) {
       })
       .catch((err) => console.log(err));
   }, []);
+  const onClickHandler = (id) => {
+    router.push(`/receiver/${id[0]}`);
+    console.log(id);
+  };
   return (
     <>
       <Layout>
         <div className={styles.ReceiverWrapper}>
-          <p><strong>Search Receiver</strong></p>
+          <p>
+            <strong>Search Receiver</strong>
+          </p>
           <div className={styles.search}>
             <form>
               <div className="form-group">
@@ -43,19 +49,21 @@ function Receiver(props) {
                 </div>
               </div>
             </form>
-              </div>
-            <section className="w-100">
-              {Array.isArray(userList) &&
-                userList.length > 0 &&
-                userList.map((userLists, id) => (
-                  <UserCard
-                    name={userLists.firstName}
-                    lastname={userLists.lastName}
-                    phone={userLists.noTelp}
-                    key={id}
-                  />
-                ))}
-            </section>
+          </div>
+          <section className="w-100">
+            {Array.isArray(userLists) &&
+              userLists.length > 0 &&
+              userLists.map((user, idx) => (
+                <UserCard
+                  name={user.firstName}
+                  lastname={user.lastName}
+                  phone={user.noTelp}
+                  id={user.id}
+                  key={idx}
+                  onClickHandler={() => onClickHandler}
+                />
+              ))}
+          </section>
         </div>
       </Layout>
     </>

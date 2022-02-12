@@ -9,3 +9,13 @@ export const getUserList = (query, token) => {
     },
   });
 };
+
+// /profile
+
+export const getUserId = (ReceiverId, token) => {
+  return axios.get(url.concat("/profile/", ReceiverId), {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};

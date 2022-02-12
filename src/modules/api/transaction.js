@@ -10,4 +10,13 @@ export const topUp = (body, token) => {
     });
   };
 
+  export const transfer = (body, token) => {
+    const url = baseurl + '/transfer';
+    return axios.post(url, body, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  };
+
   

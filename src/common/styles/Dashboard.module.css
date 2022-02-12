@@ -4,6 +4,13 @@
 }
 
 
+/* usercard */
+
+.cardUserWrapper {
+    cursor: pointer;
+}
+
+
 /* ballance cmponent */
 
 .ballanceInfo {
