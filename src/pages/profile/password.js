@@ -11,7 +11,8 @@ export default function ForgotPassword() {
   return (
     <>
       <Layout>
-        <div className="container-flui w-50 mt-5 mx-auto pt-5">
+      <div className={styles.ReceiverCard}>
+        <div className="container-flui w-50  mx-auto pt-5">
           <form className={styles.login}>
             <div className={`${styles["form-input-warpper"]} form-group mb-5`}>
               <div
@@ -22,7 +23,7 @@ export default function ForgotPassword() {
                   type={passwordShown ? "text" : "password"}
                   name="password"
                   className="form-control bi bi-file-lock"
-                  id="exampleInputPassword1"
+                 
                   placeholder="Old Password"
                   required
                 />
@@ -38,7 +39,7 @@ export default function ForgotPassword() {
                   type={passwordShown ? "text" : "password"}
                   name="password"
                   className="form-control bi bi-file-lock"
-                  id="exampleInputPassword1"
+                
                   placeholder="New Password"
                   required
                 />
@@ -54,7 +55,7 @@ export default function ForgotPassword() {
                   type={passwordShown ? "text" : "password"}
                   name="password"
                   className="form-control bi bi-file-lock"
-                  id="exampleInputPassword1"
+                 
                   placeholder="Confirm New Password"
                   required
                 />
@@ -65,6 +66,7 @@ export default function ForgotPassword() {
               Change Password
             </button>
           </form>
+        </div>
         </div>
       </Layout>
     </>

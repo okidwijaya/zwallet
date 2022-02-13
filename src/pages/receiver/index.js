@@ -8,10 +8,19 @@ import { useSelector } from "react-redux";
 import { getUserList } from "src/modules/getData/getUserList";
 
 function Receiver(props) {
+  const [searchUser, setSearchUser] = useState({});
   const router = useRouter();
   const state = useSelector((state) => state);
   console.log("current state" + state);
   const [userLists, setUserList] = useState([]);
+
+  const handleSearch = (event) => {
+    const newSearch = {
+      ...searchUser,
+      search: event.target.value,
+    };
+    return setSearchUser(newSearch);
+  };
   useEffect(() => {
     const query = "?page=1&limit=6&search=&sort=firstName DESC";
     const token = props.token;
@@ -26,6 +35,7 @@ function Receiver(props) {
     router.push(`/receiver/${id[0]}`);
     console.log(id);
   };
+
   return (
     <>
       <Layout>
@@ -34,21 +44,16 @@ function Receiver(props) {
             <strong>Search Receiver</strong>
           </p>
           <div className={styles.search}>
-            <form>
-              <div className="form-group">
-                <div
-                  className={`${styles["style-input"]} d-flex justify-content-center`}
-                >
-                  <i className="bi bi-search"></i>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="formGroupExampleInput2"
-                    placeholder="Serach receiver here"
-                  />
-                </div>
-              </div>
-            </form>
+            <div
+              className={`${styles["style-input"]} d-flex justify-content-center`}
+            >
+              <i className="bi bi-search"></i>
+              <input
+                className="form-control"
+                placeholder="Serach receiver here"
+              onChange={(event) => handleSearch(event)}
+              />
+            </div>
           </div>
           <section className="w-100">
             {Array.isArray(userLists) &&
@@ -64,6 +69,7 @@ function Receiver(props) {
                 />
               ))}
           </section>
+          <h5>{userLists.length == 0 ? "Not Found" : ""}</h5>
         </div>
       </Layout>
     </>

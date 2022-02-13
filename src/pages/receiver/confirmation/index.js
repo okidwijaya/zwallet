@@ -4,12 +4,20 @@ import Layout from "src/common/components/Layout";
 import styles from "src/common/styles/Dashboard.module.css";
 import { transfer } from "src/modules/api/transaction";
 import { connect } from "react-redux";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 
-function Confirmation({ firstName, lastName, noTelp, id },props) {
+function Confirmation(props) {
+  //{ firstName, lastName, noTelp, id },
   // router = useRouter();
   // ReceiverId = router.query.ReceiverId;
-  // console.log(router);
+  // const iduser = props.transfer;
+  // console.log(iduser);
+  // const idx = props.transfer.id;
+  // console.log(idx);
+  // const a = props.transfer.amount;
+  // console.log(a);
+  // const n = props.transfer.notes;
+  // console.log(n);
 
   const pin = props.pin;
   console.log("userpin :" + pin);
@@ -17,9 +25,9 @@ function Confirmation({ firstName, lastName, noTelp, id },props) {
   const transferBallance = (event) => {
     event.preventDefault();
     const body = {
-      receiverId: event.target.receiverId.value,
-      amount: event.target.amount.value,
-      notes: event.target.notes.value,
+      receiverId: props.transfer.id,
+      amount: props.transfer.amount,
+      notes: props.transfer.notes,
     };
     const token = props.token;
     transfer(body, token)
@@ -35,30 +43,9 @@ function Confirmation({ firstName, lastName, noTelp, id },props) {
     <>
       <Layout>
         {/* <p>user id is : {ReceiverId}</p> */}
+        <div className={styles.ReceiverCard}>
         <div className="container-fluid mx-auto w-100 my-5">
           <p className={styles.userName}>Transfer to</p>
-
-          {/* card test start */}
-          
-          <div
-            className="col-10 col-sm-10 col-md-10 col-lg-12 my-4 d-flex"
-            key={id}
-          >
-            <div className="mx-2">
-              <Image src={clientpic} alt="google" width={50} height={50} />
-            </div>
-            <div className="w-50 my-auto">
-              <p className={styles.userName}>
-                {firstName}
-                {lastName}
-              </p>
-              <p className={styles["transaction-description"]}>
-                {noTelp !== null ? noTelp : "-"}kmk
-              </p>
-            </div>
-          </div>
-
-          {/* end of test card */}
 
           <div className="col-8 col-md-8 d-flex">
             <div className="mx-2 ">
@@ -70,52 +57,63 @@ function Confirmation({ firstName, lastName, noTelp, id },props) {
             </div>
           </div>
           <form onSubmit={transferBallance}>
-            <div className="form-group">
-              <label>test for transfer</label>
-              <input
-                name="receiverId"
-                type="text"
-                className="form-control"
-                placeholder="test id"
-              />
-            </div>
-
-            <div className={styles.succesInformation}>
+            {/* <p>{props.transfer.id}</p> */}
+            {/* <div className="form-group">
+                <input
+                value={props.transfer.id} 
+                  name="receiverId"
+                />
+              </div> */}
+            <div
+              className={styles.succesInformation}
+              // name="receiverId"
+              // key={props.transfer.id}
+              // value={props.transfer.id}
+            >
               <p className={styles.userName}>Details</p>
               <div className="form-group">
                 <label className={styles.successTitles}>Amount</label>
-                <input
+                <p name="amount" className={styles.successDescription}>
+                  Rp{props.transfer.amount}
+                </p>
+                {/* <input
+                value={props.transfer.amount} 
                   name="amount"
                   type="number"
                   className={`${styles.successDescription} form-control`}
                   placeholder="amount ex. Rp.100.000"
-                />
-                {/* Rp100.000</input> */}
+                /> */}
               </div>
-              <p className={styles.successTitles}>Balance Left</p>
-              <p className={styles.successDescription}>Rp20.000</p>
-              <p className={styles.successTitles}>Date & time</p>
+              <label className={styles.successTitles}>Balance Left</label>
+              <p className={styles.successDescription}>
+                Rp{props.user.balance}
+              </p>
+              <label className={styles.successTitles}>Date & time</label>
               <p className={styles.successDescription}>May 11, 2020 - 12.20</p>
               <div className="form-group">
                 <label className={styles.successTitles}>Notes</label>
-                <input
+                <p name="notes" className={styles.successDescription}>
+                  {props.transfer.notes}
+                </p>
+                {/* <input
+                 value={props.transfer.notes}
                   name="notes"
                   type="text"
                   placeholder="notes here"
                   className={`${styles.successDescription} form-control`}
-                />
-                {/* For buying some socks</inpui> */}
+                /> */}
               </div>
             </div>
 
             {/* <Link href="/receiver/success" passHref> */}
             <button
               type="submit"
-              className="btn btn-primary d-flex align-items-end justify-content-end"
+              className="btn btn-primary mx-0 my-0 d-flex align-items-end justify-content-end"
             >
               continue
             </button>
           </form>
+          </div>
         </div>
       </Layout>
     </>
@@ -127,6 +125,8 @@ const mapStateToProps = (state) => {
     token: state.auth.userData.token,
     id: state.auth.userData.id,
     pin: state.auth.userData.pin,
+    transfer: state.transfer.data,
+    user: state.user.data,
   };
 };
 

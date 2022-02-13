@@ -5,7 +5,7 @@ import Account from "src/common/components/account";
 import { loginAction } from "src/store/actions/auth";
 import { connect } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/router";
 
 function Login(props) {
@@ -24,10 +24,7 @@ function Login(props) {
   };
   useEffect(() => {
     if (props.auth.isFulfilled === true) {
-      // localStorage["login-token"] = JSON.stringify(props.auth.userData.token);
-      // localStorage["user"] = JSON.stringify(props.auth.userData.token)
-    
-        router.push("/dashboard");
+      router.push("/dashboard");
     }
   });
   const notify = () => {
@@ -35,13 +32,6 @@ function Login(props) {
       position: "top",
     });
   };
-  // const { register, handleSubmit } = useForm();
-  // const onSubmit = data => {
-  //   console.log(data);
-  // };
-  //reac hook use form
-  // ref={register({ required: "This is required." })}
-
   return (
     <>
       <Account>
@@ -121,7 +111,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     loginDispatch: (body) => {
       dispatch(loginAction(body));
-      console.log(body);
+      console.log("login body :" + body);
     },
   };
 };

@@ -16,7 +16,7 @@ function UserCard({ name, lastname, phone, id, onClickHandler }) {
               <Image src={clientpic} alt="google" width={50} height={50} />
             </div>
             <div className="w-50 my-auto">
-              <p>{id}</p>
+              {/* <p>{id}</p> */}
               <p className={styles.userName}>
                 {name}
                 {lastname}

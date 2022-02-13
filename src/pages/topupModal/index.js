@@ -2,8 +2,10 @@
 import {connect} from 'react-redux';
 import styles from "src/common/styles/Topup.module.css";
 import { topUp } from "src/modules/api/transaction";
+import { useRouter } from "next/router";
 
 function TopupModal(props) {
+  const router = useRouter();
   if (!props.show) {
     return null;
   }
@@ -29,6 +31,16 @@ function TopupModal(props) {
     });
   };
 
+  const onClickHandler = () => {
+    // router.push("/dashboard");
+    router.reload();
+  };
+
+  const forceRefresh = () => {
+    router.reload(window.location.dashboard)
+    // router.reload();
+  };
+
   // const closeOnEscapeKeyDown = (e) => {
   //   if ((e.charCode || e.keyCode) === 27) {
   //     props.onClose();
@@ -44,7 +56,7 @@ function TopupModal(props) {
 
   return (
     <>
-      <div className={styles.topupModal} onClick={props.onClose}>
+      <div className={styles.topupModal} onClick={onClickHandler}> 
         <div onClick={(e) => e.stopPropagation()}>
           <div className={styles.topup}>
             <div className="d-flex justify-content-between mx-0 mt-4">
@@ -56,7 +68,7 @@ function TopupModal(props) {
                 <p>Enter the amount of money, and click submit</p>
               </div>
               <div className="col-2">
-                <a className="btn btn-light" onClick={props.onClose}>
+                <a className="btn btn-light" onClick={forceRefresh}>
                   <i className="bi bi-x-lg"></i>
                 </a>
               </div>

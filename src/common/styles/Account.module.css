@@ -1,3 +1,14 @@
+.ReceiverCard {
+    width: 100%;
+    padding: 1rem;
+    margin: auto;
+    background: #ffffff;
+    box-shadow: 2px 13px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 25px;
+    /* min-height: 300px; */
+    height: 450px;
+}
+
 .formContainer {
     position: absoulute;
     z-index: 3;

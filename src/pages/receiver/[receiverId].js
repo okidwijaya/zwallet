@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import { useRouter } from "next/router";
 import { connect } from "react-redux";
-import clientpic from "src/assets/image/clientst.png";
+// import clientpic from "src/assets/image/clientst.png";
 import Layout from "src/common/components/Layout";
 import styles from "src/common/styles/Dashboard.module.css";
 import { getUserId } from "src/modules/getData/getUserList";
 import ReceiverCard from "src/common/components/card/UserReceiverCard";
-import Link from "next/link";
+// import Link from "next/link";
 
 function ReceiverDetail(props) {
+//  const balance = props.user.balance;
   const router = useRouter();
   const [user, setUser] = useState({});
   const receiverId = router.query.receiverId;
@@ -37,7 +38,7 @@ function ReceiverDetail(props) {
 
   return (
     <Layout>
-      <p><small>user url id : {receiverId}</small></p>
+      {/* <p><small>user url id : {receiverId}</small></p> */}
       <div className="container-fluid mx-auto w-100 my-5">
         <p className={styles.userName}>Transfer Money</p>
         <section className="w-100">
@@ -51,9 +52,7 @@ function ReceiverDetail(props) {
       )}
           </section>
       </div>
-      <Link href="confirmation" passHref>
-      <button className="btn btn-light">continue</button>
-      </Link>
+      {/* <p className={styles.amountBallanceDescription}>Rp.{props.user.balance}</p> */}
     </Layout>
   );
 }
@@ -62,6 +61,7 @@ const mapStateToProps = (state) => {
   return {
     token: state.auth.userData.token,
     id: state.auth.userData.id,
+    user : state.user.data,
   };
 };
 

@@ -175,7 +175,7 @@
 }
 
 .style-input {
-    padding: 0.5rem 1rem;
+    padding: 0.3rem auto;
     border-radius: 12px;
     border: 1px solid rgba(58, 61, 66, 0.1);
 }
@@ -194,3 +194,91 @@
     font-size: 2vh;
     color: #514F5B;
 }
+
+
+/* receiver card */
+
+.notesTransfer {
+    border: none;
+    background-color: white;
+    border-radius: 0;
+    text-align: center;
+    width: 50%;
+    margin: 15px auto;
+    align-items: center;
+    padding: 0 10px 5px 10px;
+    /* focus: none; */
+    box-shadow: none !important;
+    border-bottom: 1px solid rgba(169, 169, 169, 0.8);
+}
+
+.notesTransfer input::placeholder {
+    background-color: white;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    font-size: 2vh;
+    color: rgba(169, 169, 169, 0.459);
+}
+
+.ReceiverCard button {
+    float: right;
+    margin-top: 2rem;
+    margin-right: 2rem;
+}
+
+.ReceiverCard {
+    width: 100%;
+    padding: 1rem;
+    margin: auto;
+    background: #ffffff;
+    box-shadow: 2px 13px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 25px;
+    /* min-height: 300px; */
+    height: 450px;
+}
+
+.ReceiverCard form {
+    width: 100%;
+    margin: auto;
+}
+
+.amountTranasfer {
+    border: none;
+    background-color: white;
+    border-radius: 0;
+    width: 25%;
+    height: 55px;
+    margin: 15px auto;
+    align-items: center;
+    padding: 0 10px 5px 10px;
+    font-size: 4vh;
+    text-align: center;
+    /* focus: none; */
+    box-shadow: none !important;
+}
+
+.amountTranasfer input::placeholder {
+    background-color: white;
+    font-family: Nunito Sans;
+    font-style: normal;
+    height: 75px;
+    font-weight: borlder;
+    text-align: center;
+    font-size: 4vh;
+    color: rgba(169, 169, 169, 0.459);
+}
+
+.amountBallanceDescription {
+    font-weight: bold;
+    font-size: 2vh;
+    text-align: center;
+    color: #514F5B;
+}
+
+
+/* 
+font-weight: bold;
+font-size: 2vh;
+color: #514F5B; */

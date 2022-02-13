@@ -3,11 +3,14 @@ import clientpic from "src/assets/image/clientst.png";
 import styles from "src/common/styles/User.module.css";
 import Layout from "src/common/components/Layout.js";
 import Link from "next/link";
+import { connect } from "react-redux";
 
-export default function Profile() {
+function Profile(props) {
   return (
     <>
       <Layout>
+      <div className={styles.ReceiverCard}>
+
         <div className="d-flex justify-content-center align-items-center mt-5">
           <div className="col-6 col-md-6 mx-auto text-center">
             <div className="mx-2">
@@ -16,8 +19,8 @@ export default function Profile() {
                 <i className="bi bi-pencil"></i> edit
               </div>
               <div className="w-50 my-auto mx-auto">
-                <p className={styles.userName}>Netflix</p>
-                <p className={styles.phoneNumber}>+9883 939 32939</p>
+                <p className={styles.userName}>{props.user.firstName}{props.user.lastName}</p>
+                <p className={styles.phoneNumber}>{props.user.noTelp !== null ? props.user.noTelp : "-"}</p>
               </div>
             </div>
             <div className="text-align-left">
@@ -33,7 +36,7 @@ export default function Profile() {
                 </button>
               </Link>
 
-              <Link href="/pin" passHref>
+              <Link href="/profile/changepin" passHref>
                 <button className="btn btn-secondary btn-block w-100 my-2">
                   Change Pin <i className="bi bi-chevron-right"></i>
                 </button>
@@ -47,7 +50,18 @@ export default function Profile() {
             </div>
           </div>
         </div>
+        </div>
       </Layout>
     </>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    token: state.auth.userData.token,
+    id: state.auth.userData.id,
+    user: state.user.data,
+  };
+};
+
+export default connect(mapStateToProps)(Profile);

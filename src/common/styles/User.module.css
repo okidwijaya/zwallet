@@ -7,6 +7,29 @@
     margin: 1px;
 }
 
+.ReceiverCard {
+    width: 100%;
+    padding: 1rem;
+    margin: auto;
+    background: #ffffff;
+    box-shadow: 2px 13px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 25px;
+    /* min-height: 300px; */
+    height: 450px;
+}
+
+.userInfoCard {
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+    margin: auto;
+    background: #ffffff;
+    box-shadow: 2px 13px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 25px;
+    /* min-height: 300px; */
+    height: 460px;
+}
+
 .phoneNumber {
     font-weight: normal;
     font-size: 1.8vh;
