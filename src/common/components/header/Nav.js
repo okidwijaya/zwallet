@@ -15,17 +15,7 @@ export default function Nav() {
             <Image src={logo} alt="logo" />
           </a>
         </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+      
 
         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <div className="position-absolute end-0 my-2 my-lg-0">

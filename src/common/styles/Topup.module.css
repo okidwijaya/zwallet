@@ -1,3 +1,13 @@
+.containerToast {
+    font-size: 1vh;
+    z-index: 9999;
+    width: 100%;
+}
+
+.containerToast i {
+    font-size: 12px;
+}
+
 .topup {
     font-family: Nunito Sans;
     font-style: normal;

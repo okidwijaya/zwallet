@@ -4,7 +4,7 @@ import Layout from "src/common/components/Layout";
 import styles from "src/common/styles/Dashboard.module.css";
 import { transfer } from "src/modules/api/transaction";
 import { connect } from "react-redux";
-// import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 
 function Confirmation(props) {
   //{ firstName, lastName, noTelp, id },
@@ -18,6 +18,7 @@ function Confirmation(props) {
   // console.log(a);
   // const n = props.transfer.notes;
   // console.log(n);
+  const router = useRouter();
 
   const pin = props.pin;
   console.log("userpin :" + pin);
@@ -34,6 +35,9 @@ function Confirmation(props) {
       .then((response) => {
         console.log("response", response);
         console.log(response.data);
+        setTimeout(() => {
+          router.push("/receiver/success");
+        }, 2000);
       })
       .catch((error) => {
         console.log(error.response);
@@ -44,75 +48,81 @@ function Confirmation(props) {
       <Layout>
         {/* <p>user id is : {ReceiverId}</p> */}
         <div className={styles.ReceiverCard}>
-        <div className="container-fluid mx-auto w-100 my-5">
-          <p className={styles.userName}>Transfer to</p>
+          <div className="container-fluid mx-auto w-100 my-5">
+            <p className={styles.userName}>Transfer to</p>
 
-          <div className="col-8 col-md-8 d-flex">
-            <div className="mx-2 ">
-              <Image src={clientpic} alt="google" width={50} height={50} />
+            <div className="col-8 col-md-8 d-flex">
+              <div className="mx-2 ">
+                <Image src={clientpic} alt="google" width={50} height={50} />
+              </div>
+              <div className="w-50 text-left my-auto">
+                <p className={styles.userName}>
+                  {" "}
+                  {props.transfer.firstName}
+                  {props.transfer.lastName}
+                </p>
+                <p className={styles["transaction-description"]}> {props.transfer.noTelp !== null ? props.transfer.noTelp : "-"}</p>
+              </div>
             </div>
-            <div className="w-50 text-left my-auto">
-              <p className={styles.userName}>Netflix</p>
-              <p className={styles["transaction-description"]}>Transfer</p>
-            </div>
-          </div>
-          <form onSubmit={transferBallance}>
-            {/* <p>{props.transfer.id}</p> */}
-            {/* <div className="form-group">
+            <form onSubmit={transferBallance}>
+              {/* <p>{props.transfer.id}</p> */}
+              {/* <div className="form-group">
                 <input
                 value={props.transfer.id} 
                   name="receiverId"
                 />
               </div> */}
-            <div
-              className={styles.succesInformation}
-              // name="receiverId"
-              // key={props.transfer.id}
-              // value={props.transfer.id}
-            >
-              <p className={styles.userName}>Details</p>
-              <div className="form-group">
-                <label className={styles.successTitles}>Amount</label>
-                <p name="amount" className={styles.successDescription}>
-                  Rp{props.transfer.amount}
-                </p>
-                {/* <input
+              <div
+                className={styles.succesInformation}
+                // name="receiverId"
+                // key={props.transfer.id}
+                // value={props.transfer.id}
+              >
+                <p className={styles.userName}>Details</p>
+                <div className="form-group">
+                  <label className={styles.successTitles}>Amount</label>
+                  <p name="amount" className={styles.successDescription}>
+                    Rp{props.transfer.amount}
+                  </p>
+                  {/* <input
                 value={props.transfer.amount} 
                   name="amount"
                   type="number"
                   className={`${styles.successDescription} form-control`}
                   placeholder="amount ex. Rp.100.000"
                 /> */}
-              </div>
-              <label className={styles.successTitles}>Balance Left</label>
-              <p className={styles.successDescription}>
-                Rp{props.user.balance}
-              </p>
-              <label className={styles.successTitles}>Date & time</label>
-              <p className={styles.successDescription}>May 11, 2020 - 12.20</p>
-              <div className="form-group">
-                <label className={styles.successTitles}>Notes</label>
-                <p name="notes" className={styles.successDescription}>
-                  {props.transfer.notes}
+                </div>
+                <label className={styles.successTitles}>Balance Left</label>
+                <p className={styles.successDescription}>
+                  Rp{props.user.balance}
                 </p>
-                {/* <input
+                <label className={styles.successTitles}>Date & time</label>
+                <p className={styles.successDescription}>
+                  May 11, 2020 - 12.20
+                </p>
+                <div className="form-group">
+                  <label className={styles.successTitles}>Notes</label>
+                  <p name="notes" className={styles.successDescription}>
+                    {props.transfer.notes}
+                  </p>
+                  {/* <input
                  value={props.transfer.notes}
                   name="notes"
                   type="text"
                   placeholder="notes here"
                   className={`${styles.successDescription} form-control`}
                 /> */}
+                </div>
               </div>
-            </div>
 
-            {/* <Link href="/receiver/success" passHref> */}
-            <button
-              type="submit"
-              className="btn btn-primary mx-0 my-0 d-flex align-items-end justify-content-end"
-            >
-              continue
-            </button>
-          </form>
+              {/* <Link href="/receiver/success" passHref> */}
+              <button
+                type="submit"
+                className="btn btn-primary mx-0 my-0 d-flex align-items-end justify-content-end"
+              >
+                continue
+              </button>
+            </form>
           </div>
         </div>
       </Layout>

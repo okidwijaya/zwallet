@@ -173,7 +173,7 @@ export default function Banner() {
         {/* card testimonial*/}
         <div className="row justify-content-center align-items-center w-100">
           <div className="col-2 col-sm-2 col-md-2">
-            <button>left</button>
+            <button className="btn btn-light w-25 h-25"><i className="bi bi-arrow-left-circle"></i></button>
           </div>
           <div className="col-7 col-sm-7 col-md-7">
             <div className="container">
@@ -197,7 +197,7 @@ export default function Banner() {
             </div>
           </div>
           <div className="col-2 col-sm-2 col-md-2">
-            <button>right</button>
+            <button className="btn btn-light w-25 h-25"><i className="bi bi-arrow-right-circle"></i></button>
           </div>
         </div>
       </div>

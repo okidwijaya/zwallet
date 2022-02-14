@@ -1,8 +1,8 @@
-// import React, { useEffect } from "react";
-import {connect} from 'react-redux';
+import { connect } from "react-redux";
 import styles from "src/common/styles/Topup.module.css";
 import { topUp } from "src/modules/api/transaction";
 import { useRouter } from "next/router";
+import { ToastContainer, toast } from "react-toastify";
 
 function TopupModal(props) {
   const router = useRouter();
@@ -16,19 +16,20 @@ function TopupModal(props) {
       amount: event.target.amount.value,
     };
     const token = props.token;
-    console.log(props.token)
+    console.log(props.token);
     topUp(body, token)
-    .then((response) => {
-      console.log('response', response);
-      console.log(response.data);
-      console.log(response.data.data.redirectUrl);
-      setTimeout(() => {
-        window.open(response.data.data.redirectUrl, '_blank');
-      }, 3000);
-    })
-    .catch((error) => {
-      console.log(error.response);
-    });
+      .then((response) => {
+        console.log("response", response);
+        console.log(response.data);
+        console.log(response.data.data.redirectUrl);
+
+        setTimeout(() => {
+          window.open(response.data.data.redirectUrl, "_blank");
+        }, 2000);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
   };
 
   const onClickHandler = () => {
@@ -37,8 +38,13 @@ function TopupModal(props) {
   };
 
   const forceRefresh = () => {
-    router.reload(window.location.dashboard)
+    router.reload(window.location.dashboard);
     // router.reload();
+  };
+  const notify = () => {
+    toast.info("topup success", {
+      position: "top",
+    });
   };
 
   // const closeOnEscapeKeyDown = (e) => {
@@ -56,7 +62,11 @@ function TopupModal(props) {
 
   return (
     <>
-      <div className={styles.topupModal} onClick={onClickHandler}> 
+      <ToastContainer />
+      <div className={styles.topupModal} onClick={onClickHandler}>
+        {/* <div className={styles.containerToast}> */}
+        {/* </div> */}
+
         <div onClick={(e) => e.stopPropagation()}>
           <div className={styles.topup}>
             <div className="d-flex justify-content-between mx-0 mt-4">
@@ -67,6 +77,7 @@ function TopupModal(props) {
                 </p>
                 <p>Enter the amount of money, and click submit</p>
               </div>
+
               <div className="col-2">
                 <a className="btn btn-light" onClick={forceRefresh}>
                   <i className="bi bi-x-lg"></i>
@@ -84,9 +95,13 @@ function TopupModal(props) {
                   required
                 />
               </div>
-                <button type="submit" className="btn btn-block btn-secondary">
-                  Submit
-                </button>
+              <button
+                type="submit"
+                className="btn btn-block btn-secondary"
+                onClick={notify}
+              >
+                Submit
+              </button>
             </form>
           </div>
         </div>
