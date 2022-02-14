@@ -5,6 +5,7 @@ import styles from "src/common/styles/Dashboard.module.css";
 import { transfer } from "src/modules/api/transaction";
 import { connect } from "react-redux";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 function Confirmation(props) {
   //{ firstName, lastName, noTelp, id },
@@ -23,26 +24,27 @@ function Confirmation(props) {
   const pin = props.pin;
   console.log("userpin :" + pin);
 
-  const transferBallance = (event) => {
-    event.preventDefault();
-    const body = {
-      receiverId: props.transfer.id,
-      amount: props.transfer.amount,
-      notes: props.transfer.notes,
-    };
-    const token = props.token;
-    transfer(body, token)
-      .then((response) => {
-        console.log("response", response);
-        console.log(response.data);
-        setTimeout(() => {
-          router.push("/receiver/success");
-        }, 2000);
-      })
-      .catch((error) => {
-        console.log(error.response);
-      });
-  };
+  // const transferBallance = (event) => {
+  //   event.preventDefault();
+  //   const body = {
+  //     receiverId: props.transfer.id,
+  //     amount: props.transfer.amount,
+  //     notes: props.transfer.notes,
+  //   };
+  //   const token = props.token;
+  //   transfer(body, token)
+  //     .then((response) => {
+  //       console.log("response", response);
+  //       console.log(response.data);
+  //       setTimeout(() => {
+  //         // router.push("/receiver/success");
+  //         router.reload(window.location.success);
+  //       }, 2000);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.response);
+  //     });
+  // };
   return (
     <>
       <Layout>
@@ -64,7 +66,7 @@ function Confirmation(props) {
                 <p className={styles["transaction-description"]}> {props.transfer.noTelp !== null ? props.transfer.noTelp : "-"}</p>
               </div>
             </div>
-            <form onSubmit={transferBallance}>
+            {/* <form onSubmit={transferBallance}> */}
               {/* <p>{props.transfer.id}</p> */}
               {/* <div className="form-group">
                 <input
@@ -115,14 +117,15 @@ function Confirmation(props) {
                 </div>
               </div>
 
-              {/* <Link href="/receiver/success" passHref> */}
+              <Link href="/receiver/checkpin" passHref>
               <button
                 type="submit"
                 className="btn btn-primary mx-0 my-0 d-flex align-items-end justify-content-end"
               >
                 continue
               </button>
-            </form>
+              </Link>
+            {/* </form> */}
           </div>
         </div>
       </Layout>

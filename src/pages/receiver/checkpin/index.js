@@ -3,17 +3,20 @@ import React, { useState, useEffect } from "react";
 import ReactCodeInput from "react-code-input";
 import styles from "src/common/styles/Account.module.css";
 import { pinChecker } from "src/modules/api/checkpin";
+import { transfer } from "src/modules/api/transaction";
 import { connect } from "react-redux";
+import { useRouter } from "next/router";
 
 function PinCode(props) {
   // const [isPinCodeValid, setIsPinCodeValid] = useState(true);
-  const [pinCode, setPinCode] = useState("");
   // const [btnIsPressed, setBtnIsPressed] = useState(false);
-
+  
   // const CORRECT_PIN_CODE = "111222";
   
-
+  
   // const isPinCodeValid = pinCode === CORRECT_PIN_CODE;
+  const [pinCode, setPinCode] = useState("");
+  const router = useRouter();
   const cekpin = (event) => {
     event.preventDefault();
     const pin = event.target.pin.value;
@@ -21,6 +24,25 @@ function PinCode(props) {
     pinChecker(pin, token)
       .then((res) => {
         console.log(res);
+          const body = {
+            receiverId: props.transfer.id,
+            amount: props.transfer.amount,
+            notes: props.transfer.notes,
+          };
+          // const token = props.token;
+          transfer(body, token)
+            .then((response) => {
+              console.log("response", response);
+              console.log(response.data);
+              setTimeout(() => {
+                // router.push("/receiver/success");
+                router.push("/receiver/success");
+              }, 2000);
+            })
+            .catch((error) => {
+              console.log(error.response);
+            });
+        
       })
       .catch((err) => console.log(err));
   };
@@ -96,6 +118,8 @@ const mapStateToProps = (state) => {
     token: state.auth.userData.token,
     id: state.auth.userData.id,
     pin: state.auth.userData.pin,
+    transfer: state.transfer.data,
+    user: state.user.data,
   };
 };
 
