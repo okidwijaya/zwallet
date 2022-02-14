@@ -4,33 +4,10 @@ import UserChart from "src/common/components/UserChart";
 import styles from "src/common/styles/Dashboard.module.css";
 import Link from "next/link";
 import Layout from "src/common/components/Layout";
-import { getUserId } from "src/modules/getData/getUserList";
-import React, { useState, useEffect } from "react";
-import { profileUser } from "src/store/actions/user";
-import { connect } from "react-redux";
 
-function Dashboard(props) {
-  const [user, setUser] = useState({});
 
-  const token = props.token;
-  const receiverId = props.id;
-  const balance = props.balance;
-  console.log(balance)
-  useEffect(() => {
-    getUserId(receiverId, token)
-      .then((res) => {
-        setUser({ ...res.data.data });
-        const data = { 
-          ...res.data.data 
-          // balance: res.data.data.balance,
-          // firstName: res.data.data.firstName,
-        };
-        // console.log(res.data.data);
-        props.userDispatch(data);
-        // dispatch(profileUser(data));
-      })
-      .catch((err) => console.log(err));
-  }, []);
+function Dashboard() {
+
 
   return (
     <>
@@ -63,19 +40,20 @@ function Dashboard(props) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    token: state.auth.userData.token,
-    id: state.auth.userData.id,
-  };
-};
-const mapDispatchToProps = (dispatch) => {
-  return {
-    userDispatch: (data) => {
-      dispatch(profileUser(data));
-      // console.log("user data :" + data);
-    },
-  };
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     token: state.auth.userData.token,
+//     id: state.auth.userData.id,
+//     user: state.user.data,
+//   };
+// };
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     userDispatch: (data) => {
+//       dispatch(profileUser(data));
+//       // console.log("user data :" + data);
+//     },
+//   };
+// };
 
-export default connect(mapStateToProps ,mapDispatchToProps)(Dashboard);
+export default Dashboard;

@@ -16,6 +16,9 @@ function ReceiverCard(props) {
     const data = {
       amount: event.target.amount.value,
       notes: event.target.notes.value,
+      firstName:props.firstName,
+      lastName:props.lastName,
+      noTelp:props.noTelp,
       id: props.id,
     };
     console.log(data);
