@@ -1,6 +1,6 @@
 import Layout from "src/common/components/Layout";
-import React, { useState, useEffect } from "react";
-import ReactCodeInput from "react-code-input";
+import React, { useState } from "react";
+// import ReactCodeInput from "react-code-input";
 import styles from "src/common/styles/Account.module.css";
 import { pinChecker } from "src/modules/api/checkpin";
 import { transfer } from "src/modules/api/transaction";
@@ -69,15 +69,16 @@ function PinCode(props) {
   return (
     <>
       <Layout>
+      <div className={styles.ReceiverCardPin}>
         <div className={styles.ReceiverCard}>
-          <div className="container-fluid w-50 h-25 mx-auto my-5">
+          <div className="container-fluid w-100 h-25 mx-auto mt-3">
             <p className={styles["right-title"]}>6 Digits PIN</p>
             <p className={styles["right-description"]}>
               Create 6 digits pin to secure all your money and your data
             </p>
             <form className={styles.login} onSubmit={cekpin}>
               <div
-                className={`${styles["form-input-warpper"]} form-group my-5`}
+                className={`${styles["form-input-warppe10"]} form-group`}
               >
                  <input type="number"
                   name="pin" className="form-control"
@@ -98,7 +99,7 @@ function PinCode(props) {
                   <button
                     type="submit"
                     // onClick={checkPinCode}
-                    className="btn btn-block btn-secondary w-100 mt-5"
+                    className="btn btn-block btn-secondary w-100 mt-2"
                   >
                     Check pin
                   </button>
@@ -106,6 +107,7 @@ function PinCode(props) {
               </div>
             </form>
           </div>
+        </div>
         </div>
       </Layout>
     </>

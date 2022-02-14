@@ -50,7 +50,7 @@ function Confirmation(props) {
       <Layout>
         {/* <p>user id is : {ReceiverId}</p> */}
         <div className={styles.ReceiverCard}>
-          <div className="container-fluid mx-auto w-100 my-5">
+          <div className="container-fluid mx-auto w-100 my-5 h-100">
             <p className={styles.userName}>Transfer to</p>
 
             <div className="col-8 col-md-8 d-flex">
