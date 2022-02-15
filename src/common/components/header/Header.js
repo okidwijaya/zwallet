@@ -7,12 +7,12 @@ import { useSelector } from "react-redux";
 // import { connect } from "react-redux";
 import { useRouter } from "next/router";
 
-export default function Header() {
+export default function Header({name, lastname, phone}) {
   const router = useRouter();
   const auth = useSelector((state) => state.auth.userData.token);
+  const user = useSelector((state) => state.user);
   console.log(auth);
 
-  const user = useSelector((state) => state.user);
   if (auth === null || auth === undefined || auth === "") {
     router.push("/");
   }
@@ -33,11 +33,11 @@ export default function Header() {
               <Image src={clientpic} alt="google" width={50} height={50} />
             </div>
             <div className="w-50 my-auto">
-              <p className={`${styles["header-title"]} my-0`}>
+              <p className={`${styles["header-title"]} my-0`}>{name}{lastname} name
                 {/* {user.data.lastName !== null ? user.data.lastName : "-"} */}
                 {/* {user.data.firstName !== null ? user.data.firstName : "-"} */}
               </p>
-              <p className={`${styles["header-title-desc"]} my-0`}>
+              <p className={`${styles["header-title-desc"]} my-0`}>{phone}phone number
                 {/* {user.data.noTelp !== null ? user.data.noTelp : "-"} */}
               </p>
             </div>

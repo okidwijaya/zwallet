@@ -48,7 +48,7 @@ function PinCode(props) {
   };
 
   const notify = () => {
-    toast.info("Login success", {
+    toast.info(" success", {
       position: "top",
     });
   };
