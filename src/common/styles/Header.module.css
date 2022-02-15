@@ -14,3 +14,21 @@
     box-shadow: 2px 13px 20px rgba(0, 0, 0, 0.08);
     border-radius: 25px;
 }
+
+.header-title {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: left;
+    color: #3A3D42;
+}
+
+.header-title-desc {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.8rem;
+    text-align: left;
+    color: #3A3D42;
+}

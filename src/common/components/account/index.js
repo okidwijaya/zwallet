@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "src/common/styles/Account.module.css";
 import registerImg from "src/assets/image/register.png";
 import bg from "src/assets/image/registerbg.png";
+import {useRouter} from "next/router";
+import { useSelector } from "react-redux";
 
 export default function Account({ children }) {
+  const router = useRouter();
+  const auth = useSelector((state) => state.auth.userData.token);
+  console.log(auth);
+  if (auth) {
+    router.push("/dashboard");
+  } 
+
   return (
     <>
       <div className="row mx-auto align-item-center justify-content-center">

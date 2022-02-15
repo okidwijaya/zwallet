@@ -17,7 +17,6 @@ export default function Nav() {
         </Link>
       
 
-        <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
           <div className="position-absolute end-0 my-2 my-lg-0">
             <Link href={"/account/login"} passHref>
               <button className={`${styles.login} btn btn-outline-primary`}>
@@ -31,7 +30,6 @@ export default function Nav() {
             </button>
             </Link>
           </div>
-        </div>
       </nav>
     </>
   );

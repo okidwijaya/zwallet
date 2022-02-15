@@ -4,49 +4,78 @@
     font-weight: bold;
     font-size: 2vh;
     color: #4D4B57;
-    margin: 1px;
+    margin: 10px auto;
+}
+
+.userMenuBtn button {
+    text-align: left;
+    margin: 10px auto;
+}
+
+
+/* .userMenuBtn:active,
+.userMenuBtn:hover,
+.userMenuBtn:focus {
+    color: #6379F4;
+} */
+
+
+/* .userMenuBtn:active button, */
+
+.userMenuBtn button:hover,
+.userMenuBtn button:focus {
+    background-color: #6379F4;
+    color: #fff;
+    border: none;
+}
+
+.userMenuBtn button i {
+    text-align: right;
+    float: right;
 }
 
 .ReceiverCard {
     width: 100%;
     padding: 1rem;
-    margin: auto;
+    margin: 30px auto;
     background: #ffffff;
     box-shadow: 2px 13px 20px rgba(0, 0, 0, 0.08);
     border-radius: 25px;
     /* min-height: 300px; */
-    height: 450px;
+    height: 530px;
 }
 
 .userInfoCard {
     width: 100%;
-    padding: 1rem;
+    padding: 2rem;
     text-align: left;
-    margin: auto;
-    background: #ffffff;
-    box-shadow: 2px 13px 20px rgba(0, 0, 0, 0.08);
+    margin: auto auto auto 30px;
+    /* background: #ffffff;
+    box-shadow: 2px 13px 20px rgba(0, 0, 0, 0.08); */
     border-radius: 25px;
     /* min-height: 300px; */
-    height: 460px;
+    height: 450px;
 }
 
 .phoneNumber {
     font-weight: normal;
     font-size: 1.8vh;
     color: #7A7886;
-    margin: 1px;
+    margin: 10px auto;
 }
 
 .title {
     font-weight: normal;
     font-size: 1.8vh;
     color: #7A7886;
+    margin: 10px auto;
 }
 
 .description {
     font-weight: bold;
     font-size: 2vh;
     color: #514F5B;
+    margin: 10px auto;
 }
 
 

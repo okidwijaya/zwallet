@@ -10,8 +10,7 @@ function Profile(props) {
     <>
       <Layout>
       <div className={styles.ReceiverCard}>
-
-        <div className="d-flex justify-content-center align-items-center mt-5">
+        <div className="d-flex justify-content-center align-items-center mt-4">
           <div className="col-6 col-md-6 mx-auto text-center">
             <div className="mx-2">
               <Image src={clientpic} alt="google" width={50} height={50} />
@@ -23,27 +22,27 @@ function Profile(props) {
                 <p className={styles.phoneNumber}>{props.user.noTelp !== null ? props.user.noTelp : "-"}</p>
               </div>
             </div>
-            <div className="text-align-left">
+            <div className={styles.userMenuBtn}>
               <Link href="/profile/user" passHref>
-                <button className="btn btn-secondary btn-block w-100 my-2">
+                <button className="btn btn-outline-dark btn-block w-100">
                   Personal Information <i className="bi bi-chevron-right"></i>
                 </button>
               </Link>
 
               <Link href="/profile/password" passHref>
-                <button className="btn btn-secondary btn-block w-100 my-2">
+                <button className="btn btn-outline-dark btn-block w-100">
                   Change Password <i className="bi bi-chevron-right"></i>
                 </button>
               </Link>
 
               <Link href="/profile/changepin" passHref>
-                <button className="btn btn-secondary btn-block w-100 my-2">
+                <button className="btn btn-outline-dark btn-block w-100">
                   Change Pin <i className="bi bi-chevron-right"></i>
                 </button>
               </Link>
 
               <Link href="/" passHref>
-                <button className="btn btn-secondary btn-block w-100 my-2">
+                <button className="btn btn-outline-dark btn-block w-100">
                   Logout
                 </button>
               </Link>

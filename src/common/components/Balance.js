@@ -22,9 +22,14 @@ function Balance(props) {
       .then((res) => {
         setUser({ ...res.data.data });
         const data = { 
-          ...res.data.data 
-          // balance: res.data.data.balance,
-          // firstName: res.data.data.firstName,
+          // ...res.data.data 
+          balance: res.data.data.balance,
+          firstName: res.data.data.firstName,
+          lastName: res.data.data.lastName,
+          noTelp: res.data.data.noTelp,
+          image: res.data.data.image,
+          email: res.data.data.email,
+          id: res.data.data.id,
         };
         // console.log(res.data.data);
         props.userDispatch(data);
