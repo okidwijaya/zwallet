@@ -3,6 +3,7 @@ import styles from "src/common/styles/Topup.module.css";
 import { topUp } from "src/modules/api/transaction";
 import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function TopupModal(props) {
   const router = useRouter();

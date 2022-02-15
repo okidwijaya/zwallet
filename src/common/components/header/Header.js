@@ -15,7 +15,7 @@ export default function Header() {
   const user = useSelector((state) => state.user);
   if (auth === null || auth === undefined || auth === "") {
     router.push("/");
-  } 
+  }
 
   return (
     <>
@@ -33,19 +33,12 @@ export default function Header() {
               <Image src={clientpic} alt="google" width={50} height={50} />
             </div>
             <div className="w-50 my-auto">
-            <p className={`${styles["header-title"]} my-0`}>
-                {user.data.lastName !== null || user.data.lastName !== undefined
-                  ? user.data.lastName
-                  : "-"}
-                {user.data.firstName !== null ||
-                user.data.firstName !== undefined
-                  ? user.data.firstName
-                  : "-"}
+              <p className={`${styles["header-title"]} my-0`}>
+                {/* {user.data.lastName !== null ? user.data.lastName : "-"} */}
+                {/* {user.data.firstName !== null ? user.data.firstName : "-"} */}
               </p>
               <p className={`${styles["header-title-desc"]} my-0`}>
-                {user.data.noTelp !== null || user.data.noTelp !== undefined
-                  ? user.data.noTelp
-                  : "-"}
+                {/* {user.data.noTelp !== null ? user.data.noTelp : "-"} */}
               </p>
             </div>
           </div>
