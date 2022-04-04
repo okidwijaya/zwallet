@@ -1,34 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Z-Wallet App
 
-## Getting Started
+![zWallet](https://drive.google.com/uc?export=view&id=18RMZD15n9qOCoth3pJQIOt3vSpJnkgcU) 
 
-First, run the development server:
+Z-Wallet is a web application that I built using nextJs to meet the needs of a digital wallet that makes it easy for users to transact between users and organize finances.
 
-```bash
-npm run dev
-# or
-yarn dev
+[![react-router-dom](https://img.shields.io/npm/v/react-router-dom?label=react-router-dom)](https://www.npmjs.com/package/react-router-dom)
+[![axios](https://img.shields.io/npm/v/axios?label=axios)](https://www.npmjs.com/package/axios)
+[![react toastify](https://img.shields.io/badge/reacttoastify-v.8.1.0-yellow)](https://www.npmjs.com/package/react-toastify)
+[![redux](https://img.shields.io/npm/v/redux?label=redux)](https://www.npmjs.com/package/redux)
+[![redux-persist](https://img.shields.io/npm/v/redux-persist?label=redux-persist)](https://www.npmjs.com/package/redux-persist)
+
+# Installation
+## 1. Clone this repository
+
+Clone this repository by run the following code:
+
+```
+$ git clone https://github.com/okidwijaya/zwallet
+```
+## 2. Go to directory
+
+```
+$ cd <your directory>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 3. Install dependency packages
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Install dependency packages by run the following code inside project folder:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```
+$ npm install
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 4. Configure .env file 
 
-## Learn More
+    NEXT_PUBLIC_API_URL="https://zwalet.herokuapp.com"
+    
+## 5. Run Project
 
-To learn more about Next.js, take a look at the following resources:
+In the project directory, you can run:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### `npm start`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Deploy on Vercel
+### Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Z-Wallet : [zWallet]( https://zwallet-tawny.vercel.app)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
