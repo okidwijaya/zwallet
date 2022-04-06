@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 // import Image from "next/image";
-import { useRouter } from "next/router";
+import { useRouter } from "next/router";  
 import { connect } from "react-redux";
 // import clientpic from "src/assets/image/clientst.png";
 import Layout from "src/common/components/Layout";

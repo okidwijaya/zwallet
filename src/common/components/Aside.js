@@ -3,11 +3,36 @@ import styles from "src/common/styles/Aside.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import TopupModal from "src/pages/topupModal";
+import { logoutAction } from "src/store/actions/auth";
+import { logoutAuth } from "src/modules/utils/auth";
+import { useSelector, useDispatch } from "react-redux";
+// useRouter
 
 export default function Aside() {
+  const token = useSelector((state) => state.auth.userData.token);
+  const router = useRouter();
+  const dispatch = useDispatch();
+
   const [show, setShow] = useState(false);
 
-  const router = useRouter();
+  const handleLogout = () => {
+    // localStorage.clear();
+    logoutAuth(token)
+      .then((res) => {
+        dispatch(logoutAction());
+        localStorage.clear("persist:root");
+        router.push("/account/login");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    // navigate("/login");
+    // setTimeout(() => {
+    // }, 1000)
+  };
+
+  // const router = useRouter();
   const style = {
     marginRight: 10,
     // color: router.asPath === href ? 'red' : 'black',
@@ -57,7 +82,7 @@ export default function Aside() {
         </Link>
       </div>
 
-      <button className={styles.logout}>
+      <button className={styles.logout} onClick={handleLogout}>
         <i className="bi bi-upload"></i>
         Logout
       </button>

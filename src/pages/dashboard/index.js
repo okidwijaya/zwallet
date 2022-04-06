@@ -4,11 +4,9 @@ import UserChart from "src/common/components/UserChart";
 import styles from "src/common/styles/Dashboard.module.css";
 import Link from "next/link";
 import Layout from "src/common/components/Layout";
-
+// UserChart
 
 function Dashboard() {
-
-
   return (
     <>
       <Layout>
@@ -17,6 +15,7 @@ function Dashboard() {
           <div className="row mx-auto w-100">
             <div className="col-10 col-sm-10 col-md-7">
               <UserChart />
+              {/* <Bar /> */}
             </div>
             <div className="col-10 col-sm-10 col-md-5">
               <div className={styles.TransactionHistory}>

@@ -36,7 +36,9 @@ function HistoryDashboard(props) {
                     />
                   </div>
                   <div className="w-50 text-left my-auto">
-                    <p className={styles.userName}>{lists.fullName}</p>
+                    <p className={styles.userName}>
+                      {lists.fullName !== null ? lists.fullName : "-"}
+                    </p>
                     <p className={styles["transaction-description"]}>
                       {lists.type}
                     </p>

@@ -7,13 +7,12 @@ import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 
 export default function Layout({ children }) {
-
   const auth = useSelector((state) => state.auth.userData.token);
   const router = useRouter();
-console.log(auth);
+  console.log(auth);
 
-  if (auth === null || auth === undefined ||  auth === '') {
-    router.push('/');
+  if (auth === null || auth === undefined || auth === "") {
+    router.push("/");
   }
 
   return (

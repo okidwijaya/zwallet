@@ -5,10 +5,10 @@ import Account from "src/common/components/account";
 import { registerAuth } from "src/modules/utils/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
 export default function Register() {
-  const router = useRouter()
+  const router = useRouter();
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
@@ -63,8 +63,6 @@ export default function Register() {
                 type="text"
                 name="firstName"
                 className="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
                 placeholder="Enter Your First Name"
                 required
               />
@@ -79,7 +77,6 @@ export default function Register() {
                 type="text"
                 name="lastName"
                 className="form-control"
-                aria-describedby="emailHelp"
                 placeholder="Enter Your Last Name"
                 required
               />
@@ -91,7 +88,7 @@ export default function Register() {
             >
               <i className="bi bi-envelope"></i>
               <input
-                type="text"
+                type="email"
                 name="email"
                 className="form-control"
                 aria-describedby="emailHelp"

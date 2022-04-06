@@ -32,13 +32,18 @@ function History(props) {
                 <button className="btn btn-light">--Search filter--</button>
               </Link>
             </div>
-          <section>
-          {Array.isArray(history) &&
-              history.length > 0 &&
-              history.map((lists, id) => (
-               <TransactionHistory key={id} name={lists.fullName} amount={lists.amount} type={lists.type}/>
-              ))}
-          </section>
+            <section>
+              {Array.isArray(history) &&
+                history.length > 0 &&
+                history.map((lists, id) => (
+                  <TransactionHistory
+                    key={id}
+                    name={lists.fullName}
+                    amount={lists.amount}
+                    type={lists.type}
+                  />
+                ))}
+            </section>
           </div>
         </div>
       </Layout>
