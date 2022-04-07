@@ -3,40 +3,40 @@
 import TopupModal from "src/pages/topupModal";
 import styles from "src/common/styles/Dashboard.module.css";
 import Link from "next/link";
-// import { getUserId } from "src/modules/getData/getUserList";
-import React, { useState } from "react";
+import { getUserId } from "src/modules/getData/getUserList";
+import React, { useState, useEffect } from "react";
 // import { profileUser } from "src/store/actions/user";
 import { connect } from "react-redux";
 
 function Balance(props) {
   const [show, setShow] = useState(false);
 
-  // const [user, setUser] = useState({});
+  const [user, setUser] = useState({});
 
-  // const token = props.token;
-  // const receiverId = props.id;
+  const token = props.token;
+  const receiverId = props.id;
   // // const balance = props.balance;
   // // console.log(balance)
-  // useEffect(() => {
-  //   getUserId(receiverId, token)
-  //     .then((res) => {
-  //       setUser({ ...res.data.data });
-  //       const data = {
-  //         // ...res.data.data
-  //         balance: res.data.data.balance,
-  //         firstName: res.data.data.firstName,
-  //         lastName: res.data.data.lastName,
-  //         noTelp: res.data.data.noTelp,
-  //         image: res.data.data.image,
-  //         email: res.data.data.email,
-  //         id: res.data.data.id,
-  //       };
-  //       // console.log(res.data.data);
-  //       props.userDispatch(data);
-  //       // dispatch(profileUser(data));
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, []);
+  useEffect(() => {
+    getUserId(receiverId, token)
+      .then((res) => {
+        setUser({ ...res.data.data });
+        const data = {
+          // ...res.data.data
+          balance: res.data.data.balance,
+          firstName: res.data.data.firstName,
+          lastName: res.data.data.lastName,
+          noTelp: res.data.data.noTelp,
+          image: res.data.data.image,
+          email: res.data.data.email,
+          id: res.data.data.id,
+        };
+        // console.log(res.data.data);
+        // props.userDispatch(data);
+        // dispatch(profileUser(data));
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -49,8 +49,8 @@ function Balance(props) {
         <div className="row w-100">
           <div className="col-11 col-sm-6 mx-auto">
             <p>Balance</p>
-            <h1>Rp.{props.balance}</h1>
-            <p> {props.noTelp !== null ? props.noTelp : "-"}</p>
+            <h1>Rp.{user.balance}</h1>
+            <p> {user.noTelp !== null ? user.noTelp : "-"}</p>
           </div>
           <div className="col-11 col-sm-4 my-auto float-right">
             <Link href="/receiver" onClick={handleClick} passHref>

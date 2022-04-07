@@ -20,13 +20,16 @@ function Profile(props) {
                 </div>
                 <div className="w-50 my-auto mx-auto">
                   <p className={styles.userName}>
-                    {" "}
-                    {props.id !== null
-                      ? `${props.firstName}${props.lastName}`
-                      : "-"}
+                    {props.user.firstName}
+                    {props.user.lastName}
+                    {/* {props.user.user.firstName} */}
+                    {/* {props.user.id !== null
+                      ? `${props.user.firstName}${props.user.lastName}`
+                      : "-"} */}
                   </p>
                   <p className={styles.phoneNumber}>
-                    {props.id !== null ? props.noTelp : "-"}
+                    {/* {props.user.id !== null ? props.user.noTelp : "-"} */}
+                    {props.user.noTelp}
                   </p>
                 </div>
               </div>

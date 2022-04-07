@@ -21,7 +21,7 @@ function Header(props) {
   }
   // const auth = useSelector((state) => state.auth.userData.token);
   // const user = useSelector((state) => state.user);
-  console.log(receiverId, token);
+  // console.log(receiverId, token);
 
   // useEffect(() => {
   //   getUserId(receiverId, token)

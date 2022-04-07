@@ -24,11 +24,13 @@ function Login(props) {
   };
   useEffect(() => {
     if (props.auth.isFulfilled === true) {
-      router.push("/dashboard");
+      setTimeout(() => {
+        router.push("/dashboard");
+      }, 3000);
     }
   });
   const notify = () => {
-    toast.info("Login success", {
+    toast.info("Login success, Please wait", {
       position: "top",
     });
   };

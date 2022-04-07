@@ -6,7 +6,7 @@ import profileUser from "src/store/reducers/user";
 const reducers = combineReducers({
   auth: authReducer,
   transfer: transferReducer,
-  user : profileUser,
+  user: profileUser,
 });
 
 // users: userDataReducers,
@@ -14,3 +14,14 @@ const reducers = combineReducers({
 // logout persit
 // storage.removeItem('persist:root');
 export default reducers;
+
+// const rootReducer = (state, action) => {
+//   if (action.type === SIGNOUT_REQUEST) {
+//       // for all keys defined in your persistConfig(s)
+//       storage.removeItem('persist:root')
+//       // storage.removeItem('persist:otherKey')
+
+//       return appReducer(undefined, action);
+//   }
+//   return appReducer(state, action);
+// };
